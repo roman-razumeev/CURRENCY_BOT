@@ -26,9 +26,11 @@ def convert(message: telebot.types.Message):
     try:
         values = message.text.split(' ')
         if len(values) > 3:
-            raise APIException('Слишком много параметров.')
+            raise APIException('Слишком много параметров.\n'
+                               'Введите команду или 3 параметра')
         elif len(values) < 3:
-            raise APIException('Слишком мало параметров.')
+            raise APIException('Слишком мало параметров.\n'
+                               'Введите команду или 3 параметра')
 
         quote, base, amount = values
         total_base = CryptoConverter.get_price(quote, base, amount)
@@ -38,7 +40,7 @@ def convert(message: telebot.types.Message):
     except Exception as e:
         bot.reply_to(message, f'Не удалось обработать команду\n{e}')
     else:
-        text = f'Цена {amount} {quote} в {base} - {total_base}'
+        text = f'Цена {amount} {quote} в {base} = {total_base}'
         bot.send_message(message.chat.id, text)
 
 bot.polling()
