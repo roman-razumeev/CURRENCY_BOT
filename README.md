@@ -1,5 +1,5 @@
 ## Telegram-бот "RR_Convertbot", 
-выполняет конвертацию валют: доллар, евро, рубль, биткоин, эфириум, фунт. Данные курсов взяты с сайта [CryptoCompare](https://www.cryptocompare.com/)
+выполняет конвертацию валют: доллар, евро, рубль, биткоин, эфириум, фунт. Данные курсов взяты с сайта [CryptoCompare](https://www.cryptocompare.com/). Выполнен по заданию школы [SkillFactory](https://skillfactory.ru/) в файле `task.md`.
 
 Токен спрятан в файл .env  
 Для запуска ПО необходимо:
